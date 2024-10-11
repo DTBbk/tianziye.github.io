@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/page.css">
+    <link rel="stylesheet" href="../css/sub_page.css">
+    <link rel="stylesheet" href="../packages/fontawesome-free-6.6.0-web/css/all.min.css">
+</head>
+<body>
+    
+
+    <div class="Background " id="Page_Background">
+        <li class="square s_hidden" id="square00"></li>
+        <li class="square s_hidden" id="square01"></li>
+        <li class="square s_hidden" id="square02"></li>
+        <li class="square s_hidden" id="square03"></li>
+        <li class="square s_hidden" id="square04"></li>
+        <li class="square s_hidden" id="square05"></li>
+        <li class="square s_hidden" id="square06"></li>
+        <li class="square s_hidden" id="square07"></li>
+        <li class="square s_hidden" id="square08"></li>
+        <li class="square s_hidden" id="square09"></li>
+        <li class="square s_hidden" id="square010"></li>
+    </div>
+
+    <!--一.infoの各種パタン-->
+    <div class="container Info_Preview" id="container_Info_Preview" >
+        <div class="cloud">
+            <div class="preview_Info">
+                <div style="font-size: 15px;">デンのブログへ</div>
+                <div>ようこそいらっしゃいました！</div>
+            </div>
+        </div>
+        <h2 class="tittle_Preview" onclick="InfoPreview_btn_Clicked()">
+            <span style="color: rgb(255, 255, 255);font-size: 20px;">クリック</span> <i class="fa-solid fa-hand-pointer" style="font-size: 18px;margin-left: 4px;color: rgb(255, 255, 255);"></i>
+        </h2>
+    </div>
+    <div class="container Info hidden" id="container_Info">
+        <div id="profile_Photo">
+            <img id="photo" src="../assets/profileImage/profileImage01.jpg" alt="profileImage">
+        </div>
+        <h2 style="height: 30px;min-height: 30px;margin-top: 5px;overflow: visible;">TIAN ZIYE</h2>
+        <h6 style="height: 18px;min-height: 18px;font-size: 11px;">(デン　シヨウ)</h6>
+        <ul style="list-style: none;display: flex;flex-direction: column;font-size:15px;justify-content: center;align-items: center; min-height: 35px;margin:4px 0px;overflow: hidden;">
+            <li style="font-size: 12px;color: rgb(86, 86, 86);">CG/Unityエンジニアを目指す</li>
+            <li style="font-size: 12px;color: rgb(86, 86, 86);">プログラマー<span style="font-size: 9px;">(自称)</span></li>
+        </ul>
+        <hr class="custom-Line">
+        <p style="margin:5px 30px;font-size:12px; min-height: 200px;">
+            こんにちは、中国出身のデンです！<br>
+            大学建築学を専攻し、建築業界のデジタル技術に興味を持ちます、Grasshopper、BIM(Revit)、ComputationalDesignの活用など割と把握しています!<br>
+            これから仕事や独学で積んだC#とUnity、CG経験でよりプログラミングを活かせる方向に進みたいと思います。<br>
+            ↓のボタンで詳細の内容<span style="font-size: 9px;font-weight: bold;">(マウスのホイールをスクロールして確認)</span>をご覧いただければ幸いです。<br>
+            よろしくお願いします！  <br>
+        </p>
+        <hr class="custom-Line">
+        <div id="contact_career" style="display: block; min-height: 360px;overflow: visible;">
+            <h3 style="font-size: 15px; padding-left: 7px; color: rgb(255, 255, 255); background-color: #4d6174; border-radius: 10px;  width: 40%;">連絡先</h3>
+            <ul style="list-style: none;font-size: 13px;margin:5px 5px;overflow: visible;">
+                <li style="display: flex;flex-direction: row;font-size:13px;justify-content: start;align-items: center;">
+                    <i class="fa-solid fa-phone-volume" style="color: #0b4c88;font-size: 16px;margin:3px 5px 3px 0px;"></i><span>07035356126</span>
+                </li>
+                <li style="display: flex;flex-direction: row;font-size:13px;justify-content: start;align-items: center;">
+                    <i class="fa-solid fa-envelope" style="color: #0b4c88;font-size: 16px;margin:3px 5px 3px 0px;"></i><span>siyoden129@gmail.com</span>
+                </li>
+                <li style="display: flex;flex-direction: row;font-size:13px;justify-content: start;align-items: center;"> 
+                    <i class="fa-brands fa-line" style="color: #0b4c88;font-size: 16px;margin:3px 5px 3px 0px;"></i><span>dennshiyo</span>
+                </li>
+            </ul>
+            <h3 style="font-size: 15px; padding-left: 7px; color: rgb(255, 255, 255); background-color: #4d6174; border-radius: 10px;  width: 40%;">経歴</h3>
+            <div style="font-size: 13px;margin:5px 5px;">
+                <div style="font-size: 12px;font-weight: bold;">2018年07月</div>
+                <div>西南林業大学(中国)建築学専攻卒業</div>
+                <div style="font-size: 12px;font-weight: bold;">2021年10月</div>
+                <div>九州大学芸術工学専攻　環境デザインコース卒業</div>
+                <div style="font-size: 12px;font-weight: bold;">2022年01月~</div>
+                <div>大成建設設計本部先端デザイン室(派遣)に入社、企画、基本設計段階における各種DXツール(Grasshopper,Revit)の使用、検討など</div>
+            </div>
+            <h3 style="font-size: 15px; padding-left: 7px; color: rgb(255, 255, 255); background-color: #4d6174; border-radius: 10px;  width: 40%;">資格</h3>
+            <div style="font-size: 12px;font-weight: bold;margin:5px 5px;">
+                <div>日本語能力試験1級合格</div>
+                <div>CGエンジニア検定(CG-ARTS)エキスパート合格</div>
+            </div>
+        </div>
+        <button class="Info_btn" id="Info_btn" onclick="Info_btn_Clicked()">➔スキル/キャリア</button>
+        
+    </div>
+
+
+    <!--二.skillの各種パタン-->
+    <div class="container Skill hidden" id="container_Skill">
+        <div class="careerBar" id="skillBar_Career" >
+            <h2 style="font-size: 15px;margin-left: 9px;  padding-left: 5px; color: rgb(255, 255, 255); background-color: #4d6174; border-radius: 10px;  width: 95%;">
+            キャリア／履歴について
+            </h2>
+            <p style="margin: 0px 10px;font-size: 12px;">
+                中国の大学と日本の大学院では建築学を専攻しましたが、建築業界のデジタル技術に強い興味を持ちながら、3Dモデルの自動化技術(Grasshopper)、シミュレーション、
+                BIM(Revit)、ソフトのプラグイン開発などのDX方向に突っ込んで学びました。そして派遣社員として、東京でのゼネコンの設計部署で勤務している私は確かに普段の仕事に、
+                特にパラメトリックデザインの形状検討やBIMモデル作成の作業を楽しく対応していて、自発的にも多分野にわたるプラグインの機能も色々探索していますげと、やはり単なる
+                CAD,3Dモデルソフトの操作にとどまるのを満足できなくて、コンピュータグラフィックで構築する世界をもっと知りたい貪欲も日々膨らんで、これから本格的に独学したゲームエンジや
+                C#などのプログラミング言語を更に活用し、プロなCGエンジニアとプログラマーの方向に猪突猛進しています！
+            </p>
+        </div>
+        <div class="skillBar" id="skillBar_Tools">
+            <div class="skill" id="skill_Programming">
+                <div class="skill_status">
+                    <nav class="skill_status_bar">
+                        <input class="tool_input" type="radio" name="Programming" id="Csharp_Beginnner" checked>
+                        <label  class="status_bar label_Csharp_Beginnner" for="Csharp_Beginnner">C#:初級</label>
+
+                        <input class="tool_input" type="radio" name="Programming" id="Csharp_Intermediate">
+                        <label  class="status_bar label_Csharp_Intermediate" for="Csharp_Intermediate">C#:中級</label>
+
+                        <input class="tool_input" type="radio" name="Programming" id="Advanced">
+                        <label  class="status_bar label_Advanced" for="Advanced">C#:上級</label>
+                    
+                        <input class="tool_input" type="radio" name="Programming" id="html_css_js">
+                        <label  class="status_bar label_html_css_js" for="html_css_js">HTML/CSS/JS:初級</label>
+
+                        <label class="statusBar_Name"  style="font-size: 25px;">Programming</label>
+                    </nav>
+                </div>
+                <div class="skill_show">
+                    <div class="skill_showInfo">
+                        <p style="margin: 3px;font-size: 10px;" id = "info_Programming">
+                            基本的な文法（データ型、条件分岐、ループなど）、オブジェクト指向の基礎（クラス、継承、ポリモーフィズム）を把握しています。
+                            リストや配列の操作、例外処理、ファイルの読み書き、Linqを使った簡単なクエリも行えます。Visual Studioでのデバッグ、
+                            API呼び出しなどの操作できます・
+                        </p>
+                    </div>
+                    <div class="skill_showBtn" onclick="Skill_btn_Clicked();LoadSubPage('subPage/subPage1.html')">➔関連Project/作業</div>
+                </div>
+            </div>
+            <div class="skill" id="skill_Unity">
+                <div class="skill_status">
+                    <nav class="skill_status_bar">
+                        <input class="tool_input" type="radio" name="Unity" id="Unity_API" checked>
+                        <label  class="status_bar label_Unity_API" for="Unity_API">Unity API(初級)</label>
+
+                        <input class="tool_input" type="radio" name="Unity" id="Unity_UI">
+                        <label  class="status_bar label_Unity_UI" for="Unity_UI">Unity UIシステム(初級)</label>
+
+                        <input class="tool_input" type="radio" name="Unity" id="Unity_Animator">
+                        <label  class="status_bar label_Unity_Animator" for="Unity_Animator">Unity Animator 動画編集(初級)</label>
+                    
+                        <input class="tool_input" type="radio" name="Unity" id="Unity_DataManager">
+                        <label  class="status_bar label_Unity_DataManager" for="Unity_DataManager">Unity データ/リソース管理(初級)</label>
+
+                        <input class="tool_input" type="radio" name="Unity" id="Unity_MemoryManager">
+                        <label  class="status_bar label_Unity_MemoryManager" for="Unity_MemoryManager">Unity メモリ管理(中級)</label>
+
+                        <input class="tool_input" type="radio" name="Unity" id="Unity_SeniorLevel">
+                        <label  class="status_bar label_Unity_SeniorLevel" for="Unity_SeniorLevel">Unity Shader,ECS,AI,DOTsなど...(中級+上級)</label>
+                    
+                        <label class="statusBar_Name"  style="font-size: 25px;">Unity</label>
+
+                    </nav>
+
+                </div>
+                <div class="skill_show">
+                    <div class="skill_showInfo">
+                        <p style="margin: 3px;font-size: 10px;" id="info_Unity"> 
+                            GameObjectやTransformなどの基本クラスを理解し、オブジェクトの移動、回転、スケール操作を行えます。
+                            また、UpdateやStart関数の使い方、簡単な物理演算や衝突判定も扱えます。
+                        </p>
+                    </div>
+                    <div class="skill_showBtn" onclick="Skill_btn_Clicked();LoadSubPage('subPage/subPage2.html')">➔関連Project/作業</div>
+                </div>
+            </div>
+            <div class="skill" id="skill_BIM/ComputationalDesign">
+                <div class="skill_status">
+                    <nav class="skill_status_bar">
+                        <input class="tool_input" type="radio" name="BIM/ComputationalDesign" id="Revit_Rhino" checked>
+                        <label  class="status_bar label_Revit_Rhino" for="Revit_Rhino">Revit/Rhinoオペレーター</label>
+
+                        <input class="tool_input" type="radio" name="BIM/ComputationalDesign" id="Grasshopper">
+                        <label  class="status_bar label_Grasshopper" for="Grasshopper">Grasshopper(本体+各種プラグイン)</label>
+
+                        <input class="tool_input" type="radio" name="BIM/ComputationalDesign" id="Grasshopper_Developer">
+                        <label  class="status_bar label_Grasshopper_Developer" for="Grasshopper_Developer">Grasshopperスクリプト作成/アドイン開発</label>
+                    
+                        <input class="tool_input" type="radio" name="BIM/ComputationalDesign" id="Bim_Developer">
+                        <label  class="status_bar label_Bim_Developer" for="Bim_Developer">BIM自動化ツール操作Rhinoinside.Revit/Dynamo</label>
+                    
+                        <label class="statusBar_Name" style="font-size: 20px;">ComputationalDesign<br>/BIM</label>
+                    </nav>
+                </div>
+                <div class="skill_show">
+                    <div class="skill_showInfo">
+                        <p style="margin: 3px;font-size: 10px;" id="info_BIM_ComputationalDesign">
+                            evitではファミリの作成やパラメトリックデザイン、ビム（BIM）モデルの管理を行い、RhinoではNURBS曲線やサーフェスを使った複雑な形状のモデリングが可能です。
+                            さらに、Grasshopperを利用して両方のソフト間でデータ連携やプロセスの自動化も実践できます。
+                        </p>
+                    </div>
+                    <div class="skill_showBtn" onclick="Skill_btn_Clicked();LoadSubPage('subPage/subPage3.html')">➔関連Project/作業</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--三.portfolioの各種パタン-->
+    <div class="container Portfolio hidden" id="container_Portfolio"></div>
+
+
+    <script src="../js/page.js"></script>
+
+</body>
+</html>

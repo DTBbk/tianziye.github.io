@@ -1,0 +1,793 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+*::-webkit-scrollbar{
+    /* display: none; */
+    position: absolute;
+    width: 10px;
+    height: auto;
+    background: transparent;
+} 
+*::-webkit-scrollbar-thumb {
+    background: #8888884a;  /* 滚动条滑块的颜色 */
+    border-radius: 10px;  /* 滑块的圆角 */
+}
+*::-webkit-scrollbar-corner{
+    background-color: transparent;
+    color: transparent;
+}
+
+li::-webkit-scrollbar{display: none;}
+i::-webkit-scrollbar{display: none;}
+.skill_showBtn::-webkit-scrollbar{display: none;}
+
+:root{
+    --preview_Color:#bae955;
+
+    --Primary_Color:#6d9ac2;/*主色 (Primary Color)： 这是品牌或应用的主要颜色，通常用于按钮、链接等交互元素。*/
+    --Secondary_Color:#6f7eb5;/*辅助色 (Secondary Color)： 辅助色可以用于次要按钮或高亮信息，与主色互补。*/
+    --Accent_Color:#f1f0e8;/*强调色 (Accent Color)： 用来突出特定元素，比如警告信息、错误提示、成功提示。*/
+    --Neutral_Colors:#eee0c9;/*中性色 (Neutral Colors)： 常用于背景、边框、文本等区域，包括白色、灰色、黑色等。*/
+    --Feedback_Colors:#e22626;/*成功、警告、错误等状态颜色。*/
+
+    --containerBack_Color:rgba(235, 237, 255, 0.726);
+
+    --button_Color:#6f7eb5;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    z-index: -1000;
+
+    background: linear-gradient(to bottom,#ffffff 0%,#a9a9a9 70%,#a9a9a9 100%);
+    background-attachment: fixed;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+#Page_Background{
+    display: flex;
+    position: absolute;
+    background: rgba(165, 42, 42, 0);
+    height: 100vh;
+    min-height: 80vh;
+    width: 100vw;
+    z-index: -997;
+    list-style: none;
+}
+
+
+
+#Page_Background .square{
+   position: absolute;
+   height: 50px;
+   width: auto;
+   transform: translate(-50%,-50%);
+   background-color: #00000000;
+   color: var(--Accent_Color);
+   animation: backgroundDrop  4s ease-in-out infinite;
+   z-index: -998;
+   user-select: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: visible;
+}
+#Page_Background .square:nth-child(11){left:1%;  animation:infinite ease-in-out backgroundDrop0 7s;}
+#Page_Background .square:nth-child(1){left:10%;  animation:infinite ease-in-out backgroundDrop1 8s;}
+#Page_Background .square:nth-child(2){left:20%;  animation:infinite ease-in-out backgroundDrop2 14s;}
+#Page_Background .square:nth-child(3){left:30%;  animation:infinite ease-in-out backgroundDrop3 10s;}
+#Page_Background .square:nth-child(4){left:40%;  animation:infinite ease-in-out backgroundDrop2 12s;}
+#Page_Background .square:nth-child(5){left:50%;  animation:infinite ease-in-out backgroundDrop3 6s;}
+#Page_Background .square:nth-child(6){left:60%;  animation:infinite ease-in-out backgroundDrop0 9s;}
+#Page_Background .square:nth-child(7){left:70%;  animation:infinite ease-in-out backgroundDrop1 7s;}
+#Page_Background .square:nth-child(8){left:80%;  animation:infinite ease-in-out backgroundDrop3 5s;}
+#Page_Background .square:nth-child(9){left:90%;  animation:infinite ease-in-out backgroundDrop0 14s;}
+#Page_Background .square:nth-child(10){left:99%; animation:infinite ease-in-out backgroundDrop2 10s;}
+
+@keyframes backgroundDrop0{
+    0%{
+        transform: translateY(0)     rotate(0deg);
+    }
+    20%{
+        transform: translateY(20vh)  rotate(120deg)  scale(1.3);
+    }
+    40%{
+        transform: translateY(45vh)  rotate(70deg)  scale(1.1);
+    }
+    60%{
+        transform: translateY(60vh)  rotate(130deg)  scale(1.25);
+    } 
+    80%{
+        transform:  translateY(85vh)  rotate(210eg) scale(1.1) ;color: #ececec;
+    }
+
+    100%{
+        transform: translateY(100vh) rotate(330deg) scale(1.0); color: #ececec;
+    }
+}
+
+@keyframes backgroundDrop1{
+    0%{
+        transform: translateY(0)     rotate(0deg);
+    }
+    20%{
+        transform: translateY(15vh)  rotate(50deg)  scale(1.3);
+    }
+    40%{
+        transform: translateY(43vh)  rotate(70deg)  scale(1.1);
+    }
+    60%{
+        transform: translateY(75vh)  rotate(60deg)  scale(1.25);
+    } 
+    80%{
+        transform:  translateY(80vh)  rotate(190deg) scale(1.1);color: #ececec;
+    }
+
+    100%{
+        transform: translateY(100vh) rotate(210deg) scale(1.0);color: #ececec;
+    }
+}
+
+@keyframes backgroundDrop2{
+    0%{
+        transform: translateY(0)     rotate(0deg);
+    }
+    20%{
+        transform: translateY(22vh)  rotate(30deg)  scale(1.3);
+    }
+    40%{
+        transform: translateY(40vh)  rotate(60deg)  scale(1.1);
+    }
+    60%{
+        transform: translateY(60vh)  rotate(130deg)  scale(1.25);
+    } 
+    80%{
+        transform:  translateY(79vh)  rotate(210deg) scale(1.1);color: #ececec;
+    }
+
+    100%{
+        transform: translateY(100vh) rotate(200deg) scale(1.0);color: #ececec;
+    }
+}
+
+@keyframes backgroundDrop3{
+    0%{
+        transform: translateY(0)     rotate(0deg);
+    }
+    20%{
+        transform: translateY(23vh)  rotate(30deg)  scale(1.3);
+    }
+    40%{
+        transform: translateY(35vh)  rotate(70deg)  scale(1.1);
+    }
+    60%{
+        transform: translateY(60vh)  rotate(130deg)  scale(1.25);
+    } 
+    80%{
+        transform:  translateY(77vh)  rotate(190deg) scale(1.1);color: #ececec;
+    }
+
+    100%{
+        transform: translateY(100vh) rotate(300deg) scale(1.0);color: #ececec;
+    }
+}
+
+.Background .square .s_hidden{
+    opacity: 0;
+    visibility:hidden !important;
+    transform: scale(0.3);
+    transition: 0.5s;
+    flex-grow: 0;
+    color: brown;
+}
+
+.container {
+    background-color: rgb(78, 59, 59);
+    margin: 0px;
+
+    padding-top: 5px;
+
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    box-shadow: 1px 1px 5px 0px #474747;
+
+    transition: 0.5s;
+}
+
+.custom-Line {
+    border: none;
+    border-top: 2px solid #fff8f8;
+    width: 80%;
+    margin: 5px;
+}
+
+/*一.infoの各種パタン*/
+.container.Info {
+    position: relative;
+    background:var(--containerBack_Color);
+    backdrop-filter: blur(5px);
+    height: 99vh;
+    width: 350px;
+
+    border-radius: 1%;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+
+    padding-bottom: 6px;
+}
+
+.container.Info.hidden {
+    flex-grow: 0;
+    opacity: 0;
+    min-width: 0px;
+    transform: scale(1);
+}
+
+.container.Info_Preview{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    background-color: #ff0b0b00;
+}
+
+.container.Info_Preview .cloud{
+    position: absolute;
+    top: 170px;
+    background-color: var(--Secondary_Color);
+    height: 130px;
+    width: 500px;
+    border-radius: 50px;
+    z-index: 0;
+    transition: 0.5s;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: visible;
+    animation: cloudMoveSlow 4s linear infinite;
+    filter: drop-shadow(0 0 35px var(--Secondary_Color));
+    user-select: none;
+    border-bottom: solid 1px #ffffff;
+}
+
+.container.Info_Preview .cloud::before{
+    content: " ";
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: var(--Secondary_Color);
+    position: absolute;
+    top:-100%;
+    left: 12%;
+    z-index: -2;
+}
+.container.Info_Preview .cloud::after{
+    content: "";
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    background-color:  var(--Secondary_Color);
+    position: absolute;
+    top:-65%;
+    left: 55%;
+    z-index: -1;
+}
+@keyframes cloudMoveSlow{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.container.Info_Preview .cloud .preview_Info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 25px;
+    animation: preview_Info_ColorChange 4s linear infinite;
+    user-select: none;
+}
+@keyframes preview_Info_ColorChange{
+    0%{
+        color: #ffffff93; filter: drop-shadow(0 0 1px #ffffff);
+    }
+    50%{
+        color: #ffffffaf; filter: drop-shadow(0 0 15px #8e8e8e);
+    }
+    100%{
+        color: #ffffff93; filter: drop-shadow(0 0 1px #ffffff);
+    }
+}
+
+
+
+.container.Info_Preview.hidden {
+    flex-grow: 0;
+    opacity: 0;
+    min-width: 0px;
+    transform: scale(1);
+}
+
+.container.Info_Preview .tittle_Preview{
+    z-index: 100;
+    background-color: var(--Secondary_Color);
+    border-bottom: groove 1px #ffffff;
+    border-left: groove 1px #ffffff;
+    border-right: groove 1px #ffffff;
+
+    width: 450px;
+    height:40px;
+    border-radius: 30px;
+    filter: drop-shadow(0 0 10px var(--Secondary_Color));
+    position: absolute;
+    top: 320px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.container.Info_Preview .tittle_Preview:hover{
+    background-color:rgb(165, 143, 196);
+    filter: drop-shadow(0 0 10px rgb(165, 143, 196));
+    animation: tittle_Preview_Checked 1s linear infinite;
+}
+
+@keyframes tittle_Preview_Checked{
+    0%{transform: scale(1);}
+    50%{transform: scale(1.03);}
+    100%{transform: scale(1);}
+}
+
+.container.Info_Preview .drop{
+    position: absolute;
+    top:380px;
+    box-sizing: content-box;
+    user-select: none;
+
+    height: 100px;
+    line-height: 30px;
+    color:#6b7390;/*var(--Secondary_Color);*/
+    text-shadow: 0.5px -0.5px 2px #ffffff;
+
+
+    transform-origin:center;
+    animation: DropAnimate ease-in-out infinite;
+    animation-duration: 100s;
+}
+
+@keyframes DropAnimate{
+    0%{
+        transform: translateY(0) scaleY(0.1) ; opacity: 0;
+        transform-origin: top;
+    }
+    10%{
+        transform: translateY(5vh) scaleY(0.9); opacity: 1;
+    }
+    50%{
+        transform: translateY(25vh) scaleY(1.2);
+        transform-origin: top;
+    }
+    90%{
+        transform: translateY(45vh) scaleY(1.1);
+        transform-origin: bottom;
+    }
+    100%{
+        transform: translateY(55vh) scaleY(0.1);
+        transform-origin: bottom;
+    }
+}
+
+#profile_Photo {
+    position:static;
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    min-height: 120px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: beige;
+    margin-top: 3%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#photo{
+    object-fit: contain;
+    max-width: 110%;
+    max-height: 110%;
+}
+
+
+#contact_career {
+    width: 80%;
+    height: auto;
+    background-color: rgba(255, 127, 80, 0);
+    margin: 6px;
+}
+
+#Info_btn {
+    
+    position: relative;
+    /* margin-left: 35%;
+    margin-bottom: 5px;  */
+    left: 23%;
+
+    padding:0px 8px;
+    width: auto;
+    height: 30px;
+    min-height: 30px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: solid 1.5px var(--button_Color);
+    color: var(--button_Color);
+    background-color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0.5px 0.5px 1px 0 #000000;
+
+}
+#Info_btn:hover{
+    background-color: var(--button_Color);
+    color:#ffffff;
+    border: solid 1.2px #ffffff;
+}
+#Info_btn:active{
+    background-color:#3d3d3d;
+}
+
+
+
+/*二.skillの各種パタン*/
+.container.Skill {
+    background-color: var(--containerBack_Color);
+    backdrop-filter: 5px;
+    height: 99vh;
+    width: 400px;
+    opacity: 1;
+    margin: 0 5px;
+
+    border-radius: 1%;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.container.Skill.hidden {
+    /*隠しの状態*/
+    opacity: 0;
+    width: 0;
+    margin: 0;
+}
+
+#container_Skill .careerBar {
+    background-color: #ffffff;
+    box-shadow: 0 0 5px 5px #ffffff;; 
+    height: 30%;
+    min-height: 220px;
+    width: 100%;
+    margin: 10px;
+    overflow: scroll;
+    padding: 5px 0px;
+}
+
+#container_Skill .skillBar {
+    background-color: rgba(149, 149, 149, 0);
+    border: solid 1px #ffffff;
+    border-radius: 10px;
+
+    height: 70%;
+    min-height: 700px;
+    width: 98%;
+    margin: 10px;
+    margin-top: 0px;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    position: relative;
+
+}
+
+#container_Skill .skillBar .skill {
+    width: 98%;
+    height: 33.3%;
+    
+    border-radius: 5px;
+    border: solid 1px #ffffff;
+    margin: 3px;
+    background-color: rgba(255, 255, 255, 0.646);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    flex-direction: row;
+}
+
+#container_Skill .skillBar .skill .skill_status {
+    width: 70%;
+    height: 95%;
+    background-color: rgba(165, 42, 42, 0);
+    padding: 0;
+    padding-top: 3px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 0;
+}
+
+.skill_status_bar{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1;
+    min-width: 300px;
+    padding-left: 5px;
+}
+
+.skill_status_bar label{
+    font-size: 10px;
+}
+
+.statusBar_Name{
+    position: absolute;
+    margin-bottom:-240px;
+    z-index: 0;
+    font-size: 30px;
+    width: auto;
+
+    display: flex;                 
+    align-items: center;       
+    justify-content: center;  
+    padding: 0;                   
+    margin: 0;           
+
+    bottom: 10px;
+    left: 5px;
+
+    text-shadow: 0px 0px 2px #000000;
+
+    color: rgb(232, 240, 255);
+    pointer-events: none;
+    user-select: none;
+}
+
+.status_bar{
+    width: 79%;
+    height: 14px;
+    margin: 4px 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    border-radius: 7px;
+    padding-left: 0px;
+    font-size: 12px;
+    text-indent: 5px;
+    cursor: pointer;
+    overflow:visible;
+    position: relative;
+    z-index: 0;
+}
+
+.status_bar::before{
+    content:"";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(237, 235, 255);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 7px;
+    cursor: pointer;
+    overflow:hidden;
+    position: absolute;
+    z-index: -1;
+    box-shadow: 0px 0px 4px 0px #55808c;
+}
+
+.status_bar::after{
+    content:"";
+    background-color: var(--Primary_Color);
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 7px;
+    cursor: pointer;
+    overflow:hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.status_bar.label_Csharp_Beginnner::after{width: 85%;}
+.status_bar.label_Csharp_Intermediate::after{width: 70%;}
+.status_bar.label_Advanced::after{width: 20%;}
+.status_bar.label_html_css_js::after{width: 40%;}
+
+.status_bar.label_Unity_API::after{width: 70%;}
+.status_bar.label_Unity_UI::after{width: 60%;}
+.status_bar.label_Unity_Animator::after{width: 62%;}
+.status_bar.label_Unity_DataManager::after{width: 50%;}
+.status_bar.label_Unity_MemoryManager::after{width: 30%;}
+.status_bar.label_Unity_SeniorLevel::after{width: 5%;}
+
+.status_bar.label_Revit_Rhino::after{width: 85%;}
+.status_bar.label_Grasshopper::after{width: 90%;}
+.status_bar.label_Grasshopper_Developer::after{width: 60%;}
+.status_bar.label_Bim_Developer::after{width: 35%;}
+
+.tool_input{
+    position:absolute;
+    display: none;
+    overflow: hidden;
+}
+
+input[type="radio"]:checked + .status_bar::after{
+    background-color: #cfa900;
+    border: solid 1px #ffffff;
+}
+
+input[type="radio"]:active + .status_bar:active::after{
+    background-color:#00d0ff;
+}
+
+.status_bar:hover::after{
+    content: "";
+    background-color: #cfa900;;
+}
+
+.status_bar:hover{
+    border: solid 1px #ffffff;
+}
+
+
+
+#container_Skill .skillBar .skill .skill_show{
+    width: 30%;
+    min-width: 130px;
+    height: 95%;
+    background-color: rgba(45, 241, 94, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+
+    font-size: 12PX;
+}
+
+#container_Skill .skillBar .skill .skill_show .skill_showInfo{
+    width: 95%;
+    height: 80%;
+    border-radius: 5px;
+    box-shadow: 0 0 0.5px 1px #bababaca;
+    background-color: #747690;
+    margin: 3px 3px;
+    overflow: hidden;
+}
+#container_Skill .skillBar .skill .skill_show .skill_showInfo p{
+    color: white;
+}
+
+
+#container_Skill .skillBar .skill .skill_show .skill_showBtn {
+    width: 95%;
+    height: 28px;
+
+    margin: 3px 0;
+    border-radius: 14px;
+    border: solid 1.5px var(--button_Color);
+    font-size: 12px;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0.5px 0.5px 1px 0 #000000;
+    color: var(--button_Color);
+    cursor: pointer;
+    justify-content: center;
+    align-items:flex-end;
+    flex-direction: column;
+    display: flex;
+    padding: 4%;
+}
+#container_Skill .skillBar .skill .skill_show .skill_showBtn:hover{
+    background-color: var(--button_Color);
+    color:#ffffff;
+    border: solid 1.2px #ffffff;
+}
+#container_Skill .skillBar .skill .skill_show .skill_showBtn:active{
+    background-color:#3d3d3d;
+}
+
+#Skill_btn {
+    position: absolute;
+}
+
+/*三.portfolioの各種パタン*/
+.container.Portfolio {
+    background-color: var(--containerBack_Color);
+    backdrop-filter: blur(5px);
+    height: 99vh;
+
+    border-radius: 1%;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+    overflow-y: scroll;
+    margin: 0 3px;
+    width: 0px;
+    min-width:600px;
+    flex-grow: 1;
+    opacity: 1;
+}
+
+.container.Portfolio.hidden {
+    /*隠しの状態*/
+    flex-grow: 0;
+    opacity: 0;
+    min-width: 0px;
+    margin: 0px;
+}
+
+#container_Portfolio::-webkit-scrollbar{
+    width: 10px;
+    height: auto;
+    background: transparent;
+    position: absolute;
+}
+
+#container_Portfolio::-webkit-scrollbar-thumb {
+    background: #88888876;  /* 滚动条滑块的颜色 */
+    border-radius: 10px;  /* 滑块的圆角 */
+}
+
+

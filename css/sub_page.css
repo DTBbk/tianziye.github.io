@@ -1,0 +1,91 @@
+body{
+    padding: 0;
+    margin: 3px 0px;
+    overflow: scroll;
+}
+
+
+
+.imageFrame{
+    width: 95%;
+    min-width: 500px;
+    height: auto;
+    background-color: rgba(0, 255, 255, 0);
+
+    overflow: visible;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 0;
+    object-fit: contain; 
+    object-position:center;
+
+    
+    margin:20px 0px;
+}
+
+.imageFrame img{
+    width: 100%;
+    min-height: 100%;
+    object-fit: contain;
+    display: block;
+    z-index: 1;
+}
+
+.imageFrame .comment{
+    padding:0px 8px;
+    width: auto;
+    height: 24px;
+    background: radial-gradient(circle,rgba(72, 72, 125, 0.676),rgba(72, 72, 125, 0.265));
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+    z-index: 2;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+
+    left: 0;
+    bottom: -26px;
+}
+
+.downloadLink{
+    padding:0px 8px;
+    width: auto;
+    height: 24px;
+    background: #d27e00;
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+    z-index: 2;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+
+    right: 0;
+    bottom: -26px;
+
+    cursor: pointer;
+    /* pointer-events: none; */
+    user-select: none;
+    
+}
+.downloadLink:hover{
+    border: solid 2px #3737dc;
+}
+.downloadLink:active{
+    background-color: #667dac;
+}
+
